@@ -34,3 +34,6 @@
 /.vs/Interview/v16
 /.vs/Interview/config/applicationhost.config
 /DbEntities/bin/Debug/net5.0
+/.vs
+/InterviewContracts/bin/Debug/net5.0
+/InterviewImplementation/bin/Debug/net5.0
