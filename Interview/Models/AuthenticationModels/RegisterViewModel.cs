@@ -8,13 +8,6 @@ namespace Interview.Models.AuthenticationModels
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Името  е задължително")]
-        [StringLength(15, ErrorMessage = "Името трябва да е между 3 и 15 символа", MinimumLength = 3)]
-        public string FirstName { get; set; }
-
-        [Required(ErrorMessage = "Фамилията  е задължителна")]
-        [StringLength(15, ErrorMessage = "Фамилията трябва да е между 3 и 15 символа", MinimumLength = 3)]
-        public string LastName { get; set; }
 
         [Required(ErrorMessage = "Имейл е задължителен")]
         [EmailAddress(ErrorMessage = "Имейла не е във валиден формат")]
