@@ -17,7 +17,7 @@ namespace Interview.Models.AuthenticationModels
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Имейл е задължителен")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Имейла не е във валиден формат")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Паролата е задължителна")]
@@ -27,7 +27,7 @@ namespace Interview.Models.AuthenticationModels
 
         [Required(ErrorMessage = "Потвърждението на паролата е задължително")]        
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Compare("Password",ErrorMessage = "Паролите не съвпадат")]
         public string RepeatPassword { get; set; }
     }
 }
