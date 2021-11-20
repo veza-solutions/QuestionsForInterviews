@@ -33,3 +33,4 @@
 /.vs/QuestionsForInterviews/v16
 /.vs/Interview/v16
 /.vs/Interview/config/applicationhost.config
+/DbEntities/bin/Debug/net5.0
