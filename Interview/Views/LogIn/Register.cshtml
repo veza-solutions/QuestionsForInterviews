@@ -13,17 +13,17 @@
                     <form asp-action="Register" asp-controller="LogIn">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-group">
-                            <label asp-for="Email" class="control-label">Имейл: </label>
+                            <label asp-for="Email" class="control-label" style="color:white">Имейл: </label>
                             <input asp-for="Email" class="form-control" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="Password" class="control-label">Парола: </label>
+                            <label asp-for="Password" class="control-label" style="color:white">Парола: </label>
                             <input asp-for="Password" class="form-control" />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="RepeatPassword" class="control-label">Повтори парола: </label>
+                            <label asp-for="RepeatPassword" class="control-label" style="color:white">Повтори парола: </label>
                             <input asp-for="RepeatPassword" class="form-control" />
                             <span asp-validation-for="RepeatPassword" class="text-danger"></span>
                         </div>
