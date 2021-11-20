@@ -1,0 +1,32 @@
+﻿@model LogInViewModel
+<div>
+    <div>
+        <form asp-action="LogIn" asp-controller="LogIn">
+            <div class="form-group">
+                <label asp-for="Email">Имейл</label>
+                <br />
+                <span asp-validation-for="Email"></span>
+
+                <input asp-for="Email">
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Парола</label>
+                <br />
+                <span asp-validation-for="Password"></span>
+
+                <input asp-for="Password">
+            </div>
+            <div class="form-group">
+                <a asp-action="Register" asp-controller="LogIn">Регистрирай се</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Вход</button>
+        </form>
+    </div>
+    
+</div>
+    
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
