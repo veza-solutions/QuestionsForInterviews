@@ -54,40 +54,7 @@ namespace Interview.Controllers
             return RedirectToAction("Initial", "Home");
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Register()
-        {
-            if (this.User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Initial", "Home");
-            }
-            return View();
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            var user = new IdentityUser
-            {
-                UserName = model.Email,
-                Email = model.Email,
-                
-            };
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (result.Succeeded)
-            {                
-                await _signInManager.SignInAsync(user, isPersistent: false);               
-            }
-            return RedirectToAction("Initial", "Home");
-        }
-
+        
         [HttpGet]
         [AllowAnonymous]
 

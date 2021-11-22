@@ -37,3 +37,5 @@
 /.vs
 /InterviewContracts/bin/Debug/net5.0
 /InterviewImplementation/bin/Debug/net5.0
+/ServiceConstants/obj
+/ServiceConstants/bin/Debug/net5.0

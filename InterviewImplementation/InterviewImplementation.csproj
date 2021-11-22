@@ -6,11 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MailKit" Version="2.15.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DbEntities\DbEntities.csproj" />
     <ProjectReference Include="..\InterviewContracts\InterviewContracts.csproj" />
+    <ProjectReference Include="..\ServiceConstants\ServiceConstants.csproj" />
   </ItemGroup>
 
 </Project>
