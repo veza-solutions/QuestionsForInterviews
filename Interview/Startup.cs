@@ -1,4 +1,6 @@
 using DbEntities.DBContext;
+using InterviewContracts;
+using InterviewImplementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Models;
+using Models.EmailModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,16 +33,21 @@ namespace Interview
         {
             services.AddDbContext<InterviewQuestionsDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));            
+                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
+                options.SignIn.RequireConfirmedEmail = true;                
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
-            })
-            .AddEntityFrameworkStores<InterviewQuestionsDbContext>();
+                options.Password.RequiredLength = 3;
 
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(20);
+                options.Lockout.MaxFailedAccessAttempts = 3;
+            })
+            .AddEntityFrameworkStores<InterviewQuestionsDbContext>()
+            .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>(TokenOptions.DefaultProvider);
             services.AddMvc();
             services.AddSession();
             services.AddControllersWithViews();
@@ -46,6 +55,10 @@ namespace Interview
             services.AddControllers();
             services.AddAntiforgery();
             services.AddAutoMapper(typeof(Mapping.AutoMapping));
+
+            services.AddTransient<IEmailSender, EmailSender>();
+
+            services.Configure<SMTPConfigModel>(Configuration.GetSection("SMTPConfig"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -17,13 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implement
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{EC796DE9-5E23-415E-B973-6664082404D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewContracts", "InterviewContracts\InterviewContracts.csproj", "{9920E5E4-AD59-45A4-9CC0-5D037A94A7D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewContracts", "InterviewContracts\InterviewContracts.csproj", "{9920E5E4-AD59-45A4-9CC0-5D037A94A7D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewImplementation", "InterviewImplementation\InterviewImplementation.csproj", "{D5E7D948-36ED-4525-96DE-7937FE3F7CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewImplementation", "InterviewImplementation\InterviewImplementation.csproj", "{D5E7D948-36ED-4525-96DE-7937FE3F7CDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceModels", "{AAC7A9A2-B984-4C82-95C2-2D3B41058B24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{4322683A-8F7C-4DFC-9B43-80D3578BA77F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{4322683A-8F7C-4DFC-9B43-80D3578BA77F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static", "Static", "{6E47752E-210B-47F2-8140-D4D7B7D41ED8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceConstants", "ServiceConstants\ServiceConstants.csproj", "{DE8E5189-AB2D-46DB-9220-6F023680D479}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{4322683A-8F7C-4DFC-9B43-80D3578BA77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4322683A-8F7C-4DFC-9B43-80D3578BA77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4322683A-8F7C-4DFC-9B43-80D3578BA77F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8E5189-AB2D-46DB-9220-6F023680D479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8E5189-AB2D-46DB-9220-6F023680D479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8E5189-AB2D-46DB-9220-6F023680D479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8E5189-AB2D-46DB-9220-6F023680D479}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,8 @@ Global
 		{D5E7D948-36ED-4525-96DE-7937FE3F7CDB} = {37523ACA-46E8-47B5-812D-A59D0732F125}
 		{AAC7A9A2-B984-4C82-95C2-2D3B41058B24} = {18C775E6-8D02-49DC-B43A-F874F917A238}
 		{4322683A-8F7C-4DFC-9B43-80D3578BA77F} = {AAC7A9A2-B984-4C82-95C2-2D3B41058B24}
+		{6E47752E-210B-47F2-8140-D4D7B7D41ED8} = {18C775E6-8D02-49DC-B43A-F874F917A238}
+		{DE8E5189-AB2D-46DB-9220-6F023680D479} = {6E47752E-210B-47F2-8140-D4D7B7D41ED8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F49ED22-11FD-446C-B84E-E34D028C69BE}
