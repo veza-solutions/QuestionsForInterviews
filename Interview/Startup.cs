@@ -57,6 +57,7 @@ namespace Interview
             services.AddAutoMapper(typeof(Mapping.AutoMapping));
 
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IUserService, UserService>();
 
             services.Configure<SMTPConfigModel>(Configuration.GetSection("SMTPConfig"));
         }

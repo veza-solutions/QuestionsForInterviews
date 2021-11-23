@@ -1,4 +1,5 @@
 ﻿using Interview.Models.AuthenticationModels;
+using InterviewContracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,14 +16,17 @@ namespace Interview.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<HomeController> _logger;
+        private readonly IUserService _userService;
         public LogInController(
                ILogger<HomeController> logger,
                SignInManager<IdentityUser> signInManager,
-               UserManager<IdentityUser> userManager)
+               UserManager<IdentityUser> userManager,
+               IUserService userService)
         {
             this._signInManager = signInManager;
             this._userManager = userManager;
             this._logger = logger;
+            this._userService = userService;
         }
         [HttpGet]
         [AllowAnonymous]
@@ -38,23 +42,39 @@ namespace Interview.Controllers
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> LogIn(LogInViewModel model)
-        {            
+        {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            
+            var user = await this._userManager.FindByEmailAsync(model.Email);
+            var isUserRegistered = await this._userService.IsUserRegistered(model.Email);
+            var isEmailConfirmed = await this._userManager.IsEmailConfirmedAsync(user);
+            if (isUserRegistered == false)
+            {
+
+                ViewBag.IsLoggedIn = "Не сте регистриран моля регистрирайте се ";
+                return View();
+                
+            }
+            if(isEmailConfirmed == false)
+            {
+                ViewBag.IsLoggedIn = "Не сте потвърдили регистрацията моля потвърдете на линка изпратен на пощата Ви";
+
+                return View();
+            }
             var result = await this._signInManager.PasswordSignInAsync(model.Email,
-                           model.Password,true, lockoutOnFailure: true);
+                               model.Password, true, lockoutOnFailure: true);
 
             if (result.Succeeded)
             {
-                _logger.LogInformation("Успешно влизане.");               
-            }
+                _logger.LogInformation("Успешно влизане.");
+            }           
+
             return RedirectToAction("Initial", "Home");
         }
 
-        
+
         [HttpGet]
         [AllowAnonymous]
 

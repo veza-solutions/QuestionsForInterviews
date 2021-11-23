@@ -55,6 +55,39 @@ namespace InterviewImplementation
             return applicationUserModels;
         }
 
+        public async Task<ApplicationUserModel> GetUserByEmail(string email)
+        {
+            var user = await this._context.Users.FirstOrDefaultAsync(x=> x.Email == email);
+            if (user == null)
+            {
+                return null;
+            }
+            var applicationUser = this._autoMapper.Map<ApplicationUserModel>(user);
+            return applicationUser;
+        }
+
+        public async Task<ApplicationUserModel> GetUserById(string id)
+        {
+            var user = await this._context.Users.FindAsync(id);
+            if (user== null)
+            {
+                return null;
+            }
+            var applicationUser = this._autoMapper.Map<ApplicationUserModel>(user);
+            return applicationUser;
+        }
+
+        public async Task<bool> IsUserRegistered(string email)
+        {
+            var user = await this._context.Users.FirstOrDefaultAsync(x => x.Email == email);
+            if (user == null)
+            {
+                return false;
+            }
+            var applicationUser = this._autoMapper.Map<ApplicationUserModel>(user);
+            return true;
+        }
+
         public async Task<ApplicationUserModel> ReadAsync(Guid id)
         {
             var user = await this._context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id.ToString());

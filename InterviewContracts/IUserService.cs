@@ -9,6 +9,9 @@ namespace InterviewContracts
 {
     public interface IUserService : IServiceBase<ApplicationUserModel>
     {
-        
+        public Task<ApplicationUserModel> GetUserById(string id);
+        public Task<ApplicationUserModel> GetUserByEmail(string email);
+
+        public Task<bool> IsUserRegistered(string email);
     }
 }
