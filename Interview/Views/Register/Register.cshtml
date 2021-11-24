@@ -4,7 +4,7 @@
     ViewData["Title"] = "View";
 
 }
-<div>
+<div class="middleEl">
     <div>
 
         @if (!this.User.Identity.IsAuthenticated)
@@ -13,22 +13,25 @@
                 <form asp-action="Register" asp-controller="Register">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label asp-for="Email" class="control-label" style="color:white">Имейл: </label>
+                        <label asp-for="Email" class="control-label" style="color:black">Имейл: </label>
                         <input asp-for="Email" class="form-control" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Password" class="control-label" style="color:white">Парола: </label>
+                        <label asp-for="Password" class="control-label" style="color:black">Парола: </label>
                         <input asp-for="Password" class="form-control" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="RepeatPassword" class="control-label" style="color:white">Повтори парола: </label>
+                        <label asp-for="RepeatPassword" class="control-label" style="color:black">Повтори парола: </label>
                         <input asp-for="RepeatPassword" class="form-control" />
                         <span asp-validation-for="RepeatPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Регистрирай ме" class="btn btn-primary" />
+                        <div class="text-center">
+                            <input type="submit" value="Регистрирай ме" class="btn btn-primary btn-md" />
+                        </div>
+                        
                     </div>
                 </form>
             </div>

@@ -1,27 +1,33 @@
 ﻿@model LogInViewModel
-<div>
-    <div>
+<div class="middleEl">  
         <form asp-action="LogIn" asp-controller="LogIn">
             <div class="form-group">
-                <label asp-for="Email" style="color:white">Имейл</label>
+                <label asp-for="Email" style="color:black">Имейл</label>
                 <br />
                 <span asp-validation-for="Email"></span>
 
                 <input asp-for="Email">
             </div>
-            <div class="form-group">
-                <label asp-for="Password" style="color:white">Парола</label>
+            <div class="form-group lg">
+                <label asp-for="Password" style="color:black">Парола</label>
                 <br />
                 <span asp-validation-for="Password"></span>
 
                 <input asp-for="Password">
             </div>
-            <div class="form-group">
+            <div class="form-group lg">
                 <a asp-action="Register" asp-controller="LogIn">Регистрирай се</a>
             </div>
-            <button type="submit" class="btn btn-primary">Вход</button>
+            <div class="form-group lg">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Вход</button>
+                </div>
+                
+            </div>
+            
         </form>
-    </div>
+        
+   
     
 </div>
     
