@@ -23,13 +23,13 @@
                 }
             </div>
             <div>
-                <a href="#">Направи тест </a>
+                <a asp-controller="Test" asp-action="MakeTest">Направи тест </a>
                
                 
-                <a href="#">Блог</a>
-                <a href="#">Контакти</a>
-                <a href="#">Полезни материали</a>
-                <a href="#">Предложи въпрос</a>
+                <a asp-controller="Blog" asp-action="AllArticles">Блог</a>
+                <a asp-controller="Contacts" asp-action="About">Контакти</a>
+                <a asp-controller="Documentation" asp-action="All">Полезни материали</a>
+                <a asp-controller="Questions" asp-action="Add">Предложи въпрос</a>
                 @if (this.User.IsInRole("Admin"))
                 {
                     <a href="#">Добави въпрос</a>

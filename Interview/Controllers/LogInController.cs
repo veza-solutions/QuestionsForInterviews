@@ -48,6 +48,11 @@ namespace Interview.Controllers
                 return View(model);
             }
             var user = await this._userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                ViewBag.IsLoggedIn = "Не сте регистриран моля регистрирайте се ";
+                return View();
+            }
             var isUserRegistered = await this._userService.IsUserRegistered(model.Email);
             var isEmailConfirmed = await this._userManager.IsEmailConfirmedAsync(user);
             if (isUserRegistered == false)
