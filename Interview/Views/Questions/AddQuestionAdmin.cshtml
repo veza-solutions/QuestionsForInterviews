@@ -1,0 +1,58 @@
+﻿@model Interview.Models.Questions.AddQuestionViewModel
+
+<form asp-controller="Questions" asp-action="AddQuestionAdmin" class="mt-5">
+  <div class="form-group row">
+    <label asp-for="Description" class="col-sm-2 col-form-label">Въпрос: </label>
+    <div class="col-sm-10">
+      <input asp-for="Description" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label asp-for="Answer" class="col-sm-2 col-form-label">Отговор:</label>
+    <div class="col-sm-10">
+      <input asp-for="Answer" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label asp-for="TimeToAnswer" class="col-sm-2 col-form-label">Време за Отговор:</label>
+    <div class="col-sm-10">
+      <input asp-for="TimeToAnswer" class="form-control">
+    </div>
+  </div>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Позиция: </legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input asp-for="DeveloperRankId" type="radio" value="D63FD2BC-17A3-4DC3-8D14-69EFC0457161">
+          <label class="form-check-label" asp-for="DeveloperRankId">
+            Intern
+          </label>
+        </div>
+        <div class="form-check">
+          <input asp-for="DeveloperRankId" type="radio" value="9A2FDE70-8D1C-4B82-BD28-347C66C437C2">
+          <label class="form-check-label" asp-for="DeveloperRankId">
+            Junior
+          </label>
+        </div>
+        <div class="form-check">
+          <input asp-for="DeveloperRankId" type="radio" value="AE8C61F7-3EF8-47CD-A32F-509017E03F41">
+          <label class="form-check-label" asp-for="DeveloperRankId">
+            Mid level
+          </label>
+        </div>
+        <div class="form-check">
+          <input asp-for="DeveloperRankId" type="radio" value="7FA24D56-48C0-483B-AE21-9117D411C15D">
+          <label class="form-check-label" asp-for="DeveloperRankId">
+            Senior
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Добави</button>
+    </div>
+  </div>
+</form>

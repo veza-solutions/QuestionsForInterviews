@@ -30,10 +30,9 @@
                 <a asp-controller="Contacts" asp-action="About">Контакти</a>
                 <a asp-controller="Documentation" asp-action="All">Полезни материали</a>
                 <a asp-controller="Questions" asp-action="Add">Предложи въпрос</a>
-                @if (this.User.IsInRole("Admin"))
-                {
-                    <a href="#">Добави въпрос</a>
-                }
+                
+                <a asp-controller="Questions" asp-action="AddQuestionAdmin">Добави въпрос</a>
+                
 
             </div>
         </div>

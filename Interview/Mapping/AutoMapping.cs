@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DbEntities.Entities;
+using Interview.Models.Questions;
 using Microsoft.AspNetCore.Identity;
 using Models;
 using System;
@@ -17,6 +18,8 @@ namespace Interview.Mapping
             CreateMap<QuestionAnswerServiceModel, QuestionAnswer>();
             CreateMap<Question, QuestionServiceModel>();
             CreateMap<QuestionServiceModel, Question>();
+            CreateMap<AddQuestionViewModel, QuestionServiceModel>();
+            CreateMap<QuestionServiceModel, AddQuestionViewModel>();
             CreateMap<Test, TestServiceModel>();
             CreateMap<TestServiceModel, Test>();
             CreateMap<IdentityUser, ApplicationUserModel>();
