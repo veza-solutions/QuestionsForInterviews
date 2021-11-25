@@ -24,5 +24,9 @@ namespace DbEntities.Entities
         public IdentityUser User { get; set; }
 
         public virtual ICollection<Question> Questions { get; set; }
+
+        public Guid DeveloperRankId { get; set; }
+
+        public DeveloperRank DeveloperRank { get; set; } 
     }
 }

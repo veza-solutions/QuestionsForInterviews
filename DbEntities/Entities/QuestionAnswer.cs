@@ -20,5 +20,9 @@ namespace DbEntities.Entities
         public Guid QuestionId { get; set; }
 
         public Question Question { get; set; }
+
+        public Guid DeveloperRankId { get; set; }
+
+        public DeveloperRank DeveloperRank { get; set; }
     }
 }

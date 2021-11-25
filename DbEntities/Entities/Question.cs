@@ -29,5 +29,9 @@ namespace DbEntities.Entities
         public virtual ICollection<Test> Tests { get; set; }
         [Required]
         public string Answer { get; set; }
+
+        public Guid DeveloperRankId { get; set; }
+
+        public DeveloperRank DeveloperRank { get; set; }
     }
 }

@@ -26,6 +26,8 @@ namespace DbEntities.DBContext
 
         public DbSet<QuestionAnswer> QuestionAnswers { get; set; }
 
+        public DbSet<DeveloperRank> DeveloperRanks { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
