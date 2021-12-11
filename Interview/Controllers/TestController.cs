@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Interview.Models.Test;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Interview.Controllers
 {
@@ -6,7 +7,8 @@ namespace Interview.Controllers
     {
         public IActionResult MakeTest()
         {
-            return View();
+            var model = new GenerateTestViewModel();
+            return View(model);
         }
     }
 }

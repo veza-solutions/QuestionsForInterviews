@@ -50,11 +50,10 @@ namespace Interview.Controllers
                 foreach (var item in questionAnswers)
                 {
                     await this._answerService.CreateAsync(item);
-                }
-                
+                }                
                 return RedirectToAction("MakeTest", "Test");
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 var exMsg = e.Message;                
                 return RedirectToAction("Render", "Error", exMsg);

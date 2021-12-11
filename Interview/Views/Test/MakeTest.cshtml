@@ -1,2 +1,56 @@
-﻿
-<div class="jumbotron">Tuka shte trqbva da se napravi testa</div>
+﻿@model GenerateTestViewModel
+
+<div id="test">
+    <div class="row">
+        <div class="col-sm-3 mt-3 ml-4">
+            <select class="custom-select" asp-for="Language" asp-items="Model.Languages"></select>
+        </div>
+        <div class="col-sm-3 mt-3">
+            <select class="custom-select" asp-for="Level" asp-items="Model.Levels"></select>
+        </div>
+        <div class="col-sm-3 mt-3">
+            <select class="custom-select" asp-for="Question" asp-items="Model.NumberOfQuestions"></select>
+        </div>
+        <div class="col-sm mt-3">
+            <btn href="#" class="btn btn-success">Генерирай тест</btn>
+        </div>
+    </div>
+    <div id="test-body">
+        <div id="test-header">
+            <div id="questionNumber">
+                <div class="align-content-center">
+                    <div class="ml-2">
+                        Въпрос : <span>1</span>
+                    </div>
+                </div>
+
+            </div>
+            <div id="questionTime">
+                <div class="align-content-center">
+                    <div class="ml-2">
+                        Време : <span>1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="test-main">
+            <div>
+                <h4 id="questionTitle">Описание на въпроса</h4>
+            </div>
+            <div>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item"><span>1.</span> Първи въпрос</li>
+                    <li class="list-group-item"><span>2.</span> Втори въпрос</li>
+                    <li class="list-group-item"><span>3.</span> Трети въпрос</li>
+                    <li class="list-group-item"><span>4.</span> Четвърти въпрос</li>
+                </ol>
+            </div>
+        </div>
+        <div id="test-footer">
+            <btn href="#" class="btn btn-success">Напред</btn>
+        </div>
+    </div>
+</div>
+
+
+
