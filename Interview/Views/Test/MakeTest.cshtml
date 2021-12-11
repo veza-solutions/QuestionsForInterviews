@@ -1,18 +1,17 @@
 ﻿@model GenerateTestViewModel
-
 <div id="test">
     <div class="row">
         <div class="col-sm-3 mt-3 ml-4">
-            <select class="custom-select" asp-for="Language" asp-items="Model.Languages"></select>
+            <select v-on:change="selectLanguage($event)" class="custom-select" asp-for="Language" asp-items="Model.Languages"></select>
         </div>
         <div class="col-sm-3 mt-3">
-            <select class="custom-select" asp-for="Level" asp-items="Model.Levels"></select>
+            <select v-on:change="selectPosition($event)" class="custom-select" asp-for="Level" asp-items="Model.Levels"></select>
         </div>
         <div class="col-sm-3 mt-3">
-            <select class="custom-select" asp-for="Question" asp-items="Model.NumberOfQuestions"></select>
+            <select v-on:change="selectQuestions($event)" class="custom-select" asp-for="Question" asp-items="Model.NumberOfQuestions"></select>
         </div>
         <div class="col-sm mt-3">
-            <btn href="#" class="btn btn-success">Генерирай тест</btn>
+            <btn v-on:click="GenerateTest" class="btn btn-info">Генерирай тест</btn>             
         </div>
     </div>
     <div id="test-body">
@@ -51,6 +50,30 @@
         </div>
     </div>
 </div>
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script>
+    var app = new Vue({
+        el:"#test",
+        data: {
+            language: "",
+            rank:"",
+            questions:""
+        },
+        methods:{
+            selectLanguage(event){
+                this.language = event.target.value;
+            },
+            selectPosition(event){
+                this.rank = event.target.value;
+            },
+            selectQuestions(event){
+                this.questions = event.target.value;
+            },
+            GenerateTest:function(){
+               console.log(this.language);
+               console.log(this.rank);
+               console.log(this.questions);
+           }
+        }
+    })
+</script>
