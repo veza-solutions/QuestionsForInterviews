@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿ using AutoMapper;
 using DbEntities.DBContext;
 using DbEntities.Entities;
 using InterviewContracts;
@@ -19,6 +19,13 @@ namespace InterviewImplementation
         public AnswerService(IMapper mapper, InterviewQuestionsDbContext context) : base(mapper)
         {
             this._context = context;
+        }
+
+        public async Task AddRange(List<QuestionAnswerServiceModel> answers)
+        {
+            var answersDbModels = this._autoMapper.Map<List<QuestionAnswer>>(answers);
+            await this._context.QuestionAnswers.AddRangeAsync(answersDbModels);
+            var a = await this._context.SaveChangesAsync();
         }
 
         public async Task<Guid> CreateAsync(QuestionAnswerServiceModel entity)

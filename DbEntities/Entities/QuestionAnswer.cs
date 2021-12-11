@@ -14,7 +14,7 @@ namespace DbEntities.Entities
         public Guid Id { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(70)]
         public string Description { get; set; }
 
         public Guid QuestionId { get; set; }
@@ -23,6 +23,6 @@ namespace DbEntities.Entities
 
         public Guid DeveloperRankId { get; set; }
 
-        public DeveloperRank DeveloperRank { get; set; }
+        public virtual DeveloperRank DeveloperRank { get; set; }
     }
 }

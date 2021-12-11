@@ -59,6 +59,7 @@ namespace Interview
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IQuestionService, QuestionService>();
+            services.AddTransient<IAnswerService, AnswerService>();
             services.Configure<SMTPConfigModel>(Configuration.GetSection("SMTPConfig"));
         }
 

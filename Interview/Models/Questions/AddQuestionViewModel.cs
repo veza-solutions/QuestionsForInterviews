@@ -12,6 +12,12 @@ namespace Interview.Models.Questions
 
         public string Answer { get; set; }
 
+        public string FirstAnswer { get; set; }
+
+        public string SecondAnswer { get; set; }
+
+        public string ThirdAnswer { get; set; }
+
         public Guid DeveloperRankId { get; set; }
     }
 }

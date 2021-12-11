@@ -3,8 +3,10 @@ using Interview.Models.Questions;
 using InterviewContracts;
 using InterviewImplementation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,20 +16,15 @@ namespace Interview.Controllers
     {
         private readonly IQuestionService _questionService;
         private readonly IMapper _mapper;
-        public QuestionsController(IQuestionService questionService, IMapper mapper)
+        private readonly IAnswerService _answerService;
+        public QuestionsController(IQuestionService questionService, IMapper mapper, IAnswerService answerService)
         {            
             this._questionService = questionService;
             this._mapper = mapper;
+            this._answerService = answerService;
         }
         public IActionResult Add()
         {
-            //Add in service DeveloperRanks DO NOT USE CONTEXT IN WEB
-
-            //if (this._dbContext.DeveloperRanks.ToList().Count == 0)
-            //{
-            //    ServiceConstants.Seeder.AddDeveloperRankings(this._dbContext);
-            //}
-            
             return View();
         }
 
@@ -47,14 +44,22 @@ namespace Interview.Controllers
                 var questionDbModel = this._mapper.Map<QuestionServiceModel>(model);
                 questionDbModel.Id = Guid.NewGuid();
                 var id = await this._questionService.CreateAsync(questionDbModel);
+
+                //Question Answers
+                var questionAnswers = WebHelpers.CreateQuestionAnswers(model.FirstAnswer, model.SecondAnswer, model.ThirdAnswer, model.Answer, id, model.DeveloperRankId);
+                foreach (var item in questionAnswers)
+                {
+                    await this._answerService.CreateAsync(item);
+                }
+                
                 return RedirectToAction("MakeTest", "Test");
             }
             catch (System.Exception e)
             {
-                var exMsg = e.Message;
+                var exMsg = e.Message;                
                 return RedirectToAction("Render", "Error", exMsg);
             }
-            return View();
+            
         }
     }
 }

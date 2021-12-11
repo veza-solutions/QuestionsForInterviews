@@ -14,6 +14,6 @@ namespace Models
 
         public Guid QuestionId { get; set; }
 
-        public QuestionServiceModel Question { get; set; }
+        public Guid DeveloperRankId { get; set; }
     }
 }

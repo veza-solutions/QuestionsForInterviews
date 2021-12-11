@@ -9,5 +9,6 @@ namespace InterviewContracts
 {
     public interface IAnswerService : IServiceBase<QuestionAnswerServiceModel>
     {
+        Task AddRange(List<QuestionAnswerServiceModel> answers);
     }
 }
