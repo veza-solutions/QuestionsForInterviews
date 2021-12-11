@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interview", "Interview\Interview.csproj", "{169AACA0-6F9A-4D99-99BB-1D61D3030B45}"
 EndProject
@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static", "Static", "{6E47752E-210B-47F2-8140-D4D7B7D41ED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceConstants", "ServiceConstants\ServiceConstants.csproj", "{DE8E5189-AB2D-46DB-9220-6F023680D479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceConstants", "ServiceConstants\ServiceConstants.csproj", "{DE8E5189-AB2D-46DB-9220-6F023680D479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestionsApi", "QuestionsApi\QuestionsApi.csproj", "{7A8B0C5C-53C4-4908-9009-A07845F70F4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{DE8E5189-AB2D-46DB-9220-6F023680D479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8E5189-AB2D-46DB-9220-6F023680D479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8E5189-AB2D-46DB-9220-6F023680D479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A8B0C5C-53C4-4908-9009-A07845F70F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A8B0C5C-53C4-4908-9009-A07845F70F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A8B0C5C-53C4-4908-9009-A07845F70F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A8B0C5C-53C4-4908-9009-A07845F70F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

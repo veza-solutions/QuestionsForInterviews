@@ -57,7 +57,17 @@
         data: {
             language: "",
             rank:"",
-            questions:""
+            questions:"",
+            questionsTest:
+            [{
+                questionDescription:"testeest",
+                firstAnswer:"heheeheh",
+                secondAnswer:"aaaaa",
+                thirdAnswer:"bbb",
+                fourthAnswer:"cccc",
+                correctAnswer:"veren",
+                time:30
+            }]
         },
         methods:{
             selectLanguage(event){
@@ -70,9 +80,14 @@
                 this.questions = event.target.value;
             },
             GenerateTest:function(){
-               console.log(this.language);
-               console.log(this.rank);
-               console.log(this.questions);
+               var Language = this.language;
+               var Rank = this.rank;
+               var Questions = this.questions;
+               console.log(Language);
+               console.log(Rank);
+               console.log(Questions);
+               fetch(`https://localhost:44392/Test/GenerateTest?Language=${this.language}&&Rank=${this.rank}&&Questions=${this.questions}`)
+                .then(response => (console.log(response)))
            }
         }
     })

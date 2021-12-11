@@ -11,7 +11,7 @@ namespace Interview.Models.Test
             this.Languages = new List<SelectListItem>
             {
                 new SelectListItem {Value = "", Text = "Изберете език", Disabled=true,Selected=true},
-                new SelectListItem {Value = "C#", Text ="C#"}
+                new SelectListItem {Value = ".NET", Text =".NET"}
             };
             this.Levels = new List<SelectListItem> 
             {
