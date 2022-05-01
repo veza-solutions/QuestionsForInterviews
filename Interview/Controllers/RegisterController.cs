@@ -62,8 +62,10 @@ namespace Interview.Controllers
                 //var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 var token = await this._userManager.GenerateEmailConfirmationTokenAsync(user);
                 var confirmationLink = Url.Action("ConfirmEmail", "Register", new { userId = user.Id, token = token }, Request.Scheme);
-                var userEmailOptions = new UserEmailOptions();
-                userEmailOptions.Subject = "Верификация на имейл";
+                var userEmailOptions = new UserEmailOptions
+                {
+                    Subject = "Верификация на имейл"
+                };
                 userEmailOptions.ToEmails.Add(user.Email);
 
                 await this._emailSender.SendEmailForEmailConfirmation(userEmailOptions, confirmationLink);              
@@ -71,12 +73,6 @@ namespace Interview.Controllers
             return RedirectToAction("Initial", "Home");
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult NotFound()
-        {
-            return View();
-        }
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
@@ -96,7 +92,7 @@ namespace Interview.Controllers
 
             if (result.Succeeded)
             {
-                return View();
+                return View(); 
             }
 
             ViewBag.ErrorTitle = "Имейла не може да бъде потвърден";

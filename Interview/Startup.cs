@@ -60,6 +60,7 @@ namespace Interview
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IQuestionService, QuestionService>();
             services.AddTransient<IAnswerService, AnswerService>();
+            services.AddTransient<ITestService, TestService>();
             services.Configure<SMTPConfigModel>(Configuration.GetSection("SMTPConfig"));
         }
 

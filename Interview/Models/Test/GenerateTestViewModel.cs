@@ -8,6 +8,7 @@ namespace Interview.Models.Test
     {
         public GenerateTestViewModel()
         {
+            //TO DO GET THEM FROM DB 17/12/2021
             this.Languages = new List<SelectListItem>
             {
                 new SelectListItem {Value = "", Text = "Изберете език", Disabled=true,Selected=true},
@@ -16,10 +17,10 @@ namespace Interview.Models.Test
             this.Levels = new List<SelectListItem> 
             {
                 new SelectListItem {Value = "", Text = "Позиция", Disabled=true,Selected=true},
-                new SelectListItem {Value = "Intern", Text ="Intern"},
-                new SelectListItem {Value = "Junior", Text ="Junior"},
-                new SelectListItem {Value = "Regular", Text ="Regular"},
-                new SelectListItem {Value = "Senior", Text ="Senior"}
+                new SelectListItem {Value = "D63FD2BC-17A3-4DC3-8D14-69EFC0457161", Text ="Intern"},
+                new SelectListItem {Value = "9A2FDE70-8D1C-4B82-BD28-347C66C437C2", Text ="Junior"},
+                new SelectListItem {Value = "AE8C61F7-3EF8-47CD-A32F-509017E03F41", Text ="Regular"},
+                new SelectListItem {Value = "7FA24D56-48C0-483B-AE21-9117D411C15D", Text ="Senior"}
             };
             this.NumberOfQuestions = new List<SelectListItem>
             {

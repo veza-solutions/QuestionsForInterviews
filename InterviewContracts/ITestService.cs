@@ -9,5 +9,6 @@ namespace InterviewContracts
 {
     public interface ITestService : IServiceBase<TestServiceModel>
     {
+        TestServiceModel GenerateRandomTest(string language, Guid level, int numberOfQuestions);
     }
 }

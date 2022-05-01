@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\" />
+    <Folder Include="WebHelpers\" />
   </ItemGroup>
 
 </Project>

@@ -25,11 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{4322683A-8F7C-4DFC-9B43-80D3578BA77F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static", "Static", "{6E47752E-210B-47F2-8140-D4D7B7D41ED8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{6E47752E-210B-47F2-8140-D4D7B7D41ED8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceConstants", "ServiceConstants\ServiceConstants.csproj", "{DE8E5189-AB2D-46DB-9220-6F023680D479}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestionsApi", "QuestionsApi\QuestionsApi.csproj", "{7A8B0C5C-53C4-4908-9009-A07845F70F4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestionsApi", "QuestionsApi\QuestionsApi.csproj", "{7A8B0C5C-53C4-4908-9009-A07845F70F4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

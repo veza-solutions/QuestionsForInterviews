@@ -1,4 +1,4 @@
-﻿ using AutoMapper;
+﻿using AutoMapper;
 using DbEntities.DBContext;
 using DbEntities.Entities;
 using InterviewContracts;
@@ -6,8 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InterviewImplementation
@@ -62,19 +60,19 @@ namespace InterviewImplementation
 
         public async Task<QuestionAnswerServiceModel> ReadAsync(Guid id)
         {
-            var questionAnswer = await this._context.QuestionAnswers.AsNoTracking().FirstOrDefaultAsync(x=>x.Id == id);
+            var questionAnswer = await this._context.QuestionAnswers.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
             var questionAnswerServiceModel = this._autoMapper.Map<QuestionAnswerServiceModel>(questionAnswer);
             return questionAnswerServiceModel;
         }
 
         public async Task UpdateAsync(QuestionAnswerServiceModel entity)
-        {            
+        {
             var questionAnswer = await this._context.QuestionAnswers.FindAsync(entity.Id);
             if (questionAnswer != null)
             {
                 var dbEntity = this._autoMapper.Map<QuestionAnswer>(entity);
                 this._context.Update(dbEntity);
-            }            
+            }
         }
     }
 }

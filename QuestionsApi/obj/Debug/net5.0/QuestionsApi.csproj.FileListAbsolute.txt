@@ -5,12 +5,12 @@ C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\QuestionsApi.runtimeconfig.json
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\QuestionsApi.runtimeconfig.dev.json
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\QuestionsApi.dll
-C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\ref\QuestionsApi.dll
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\QuestionsApi.pdb
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.csproj.AssemblyReference.cache
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.AssemblyInfoInputs.cache
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.AssemblyInfo.cs
@@ -22,6 +22,7 @@ C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.RazorTargetAssemblyInfo.cache
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.csproj.CopyComplete
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.dll
-C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\ref\QuestionsApi.dll
+C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\refint\QuestionsApi.dll
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.pdb
 C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\QuestionsApi.genruntimeconfig.cache
+C:\Users\veno1\Source\Repos\QuestionsForInterviews\QuestionsApi\obj\Debug\net5.0\ref\QuestionsApi.dll

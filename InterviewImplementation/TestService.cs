@@ -52,6 +52,28 @@ namespace InterviewImplementation
             return await Task.FromResult(testsServiceModels);
         }
 
+        public TestServiceModel GenerateRandomTest(string language, Guid level, int numberOfQuestions)
+        {
+            try
+            {
+                //1st Generate Questions for test based on numberOfQuestions the user selected
+                var questions = this._context.Questions.Where(q => q.DeveloperRankId == level).Include(p => p.AnswerOptions).ToList().Take(numberOfQuestions);
+                //2nd Populate ServiceModel
+                var questionServiceModel = _autoMapper.Map<List<QuestionServiceModel>>(questions);
+                var test = new TestServiceModel
+                {
+                    Questions = questionServiceModel
+                };
+                return test;
+                
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<TestServiceModel> ReadAsync(Guid id)
         {
             var tests = await this._context.Tests.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
