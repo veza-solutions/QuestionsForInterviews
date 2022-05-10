@@ -11,7 +11,7 @@
             <select id="question" class="custom-select" asp-for="Question" asp-items="Model.NumberOfQuestions" required></select>
         </div>
         <div class="col-sm mt-3">
-            <btn id="generate-btn" class="btn btn-info">Генерирай тест</btn>             
+            <btn id="generate-btn" class="btn btn-info">Генерирай тест</btn>
         </div>
     </div>
     <div id="test-body">
@@ -19,7 +19,7 @@
             <div id="questionNumber">
                 <div class="align-content-center">
                     <div class="ml-2">
-                        Въпрос : <span>1</span>
+                        Въпрос : <span id="questionNumber">1</span>
                     </div>
                 </div>
 
@@ -27,7 +27,7 @@
             <div id="questionTime">
                 <div class="align-content-center">
                     <div class="ml-2">
-                        Време : <span>1</span>
+                        Време : <span id="question-time"></span>
                     </div>
                 </div>
             </div>
@@ -51,25 +51,42 @@
     </div>
 </div>
 <script>
-    $('#generate-btn').click(function() {
-        var language = $('#language').val();
-        var rank = $('#rank').val();
-        var questions = $('#question').val();
-        if(language == null){
-            alert('Езика е задължително поле');
-            return;
-        }
-        if(rank == null){
-            alert('Нивото е задължително поле');
-            return;
-        }
-        if(question == null){
-            alert('Броят въпроси е задължително поле');
-            return;
-        }
+        var numberOfQuestions = 0;
+        var questionNumber = document.getElementById('questionNumber');
+        $('#generate-btn').click(function() {
+            var language = $('#language').val();
+            var rank = $('#rank').val();
+            var questions = $('#question').val();
+            if(language == null){
+                alert('Езика е задължително поле');
+                return;
+            }
+            if(rank == null){
+                alert('Нивото е задължително поле');
+                return;
+            }
+            if(question == null){
+                alert('Броят въпроси е задължително поле');
+                return;
+            }
 
-        $.get(`GenerateTest?Language=${language}&&Rank=${rank}&&Questions=${questions}`, function(data){
-            console.log(data);
+            $.get(`GenerateTest?Language=${language}&&Rank=${rank}&&Questions=${questions}`, function(data){
+                var questions = data.questions;
+                numberOfQuestions = data.questions.length;
+                for (var i = 0, len = questions.length; i < len; i += 1) {
+                    (function(i) {
+                      setInterval(function() {
+                      while(true){
+                          questions[i].timeToAnswer--;
+                          console.log(questions[i].timeToAnswer);
+                          if(questions[i].timeToAnswer == 0){
+                              break;
+                          }
+                      }
+                }, 1000)
+            })(i);
+}
+            });
         });
-    })
+
 </script>
