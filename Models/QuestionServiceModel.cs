@@ -18,5 +18,7 @@ namespace Models
         public string Answer { get; set; }
 
         public Guid DeveloperRankId { get; set; }
+
+        public ICollection<QuestionAnswerServiceModel> AnswerOptions { get; set; }
     }
 }

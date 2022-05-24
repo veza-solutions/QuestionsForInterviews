@@ -19,7 +19,7 @@
             <div id="questionNumber">
                 <div class="align-content-center">
                     <div class="ml-2">
-                        Въпрос : <span id="questionNumber">1</span>
+                        Въпрос : <span id="questionNumber"></span>
                     </div>
                 </div>
 
@@ -38,10 +38,10 @@
             </div>
             <div>
                 <ol class="list-group list-group-numbered">
-                    <li class="list-group-item" style="border-color:red;"><span>1.</span> Първи въпрос</li>
-                    <li class="list-group-item" style="border-color:blue;"><span>2.</span> Втори въпрос</li>
-                    <li class="list-group-item" style="border-color:green;"><span>3.</span> Трети въпрос</li>
-                    <li class="list-group-item" style="border-color:purple;"><span>4.</span> Четвърти въпрос</li>
+                    <li class="list-group-item" id="firstQuestion" style="border-color:red;"><span>1.</span> Първи въпрос</li>
+                    <li class="list-group-item" id="secondQuestion" style="border-color:blue;"><span>2.</span> Втори въпрос</li>
+                    <li class="list-group-item" id="thirdQuestion" style="border-color:green;"><span>3.</span> Трети въпрос</li>
+                    <li class="list-group-item" id="fourthQuestion"style="border-color:purple;"><span>4.</span> Четвърти въпрос</li>
                 </ol>
             </div>
         </div>
@@ -51,42 +51,63 @@
     </div>
 </div>
 <script>
-        var numberOfQuestions = 0;
-        var questionNumber = document.getElementById('questionNumber');
-        $('#generate-btn').click(function() {
-            var language = $('#language').val();
-            var rank = $('#rank').val();
-            var questions = $('#question').val();
-            if(language == null){
-                alert('Езика е задължително поле');
-                return;
-            }
-            if(rank == null){
-                alert('Нивото е задължително поле');
-                return;
-            }
-            if(question == null){
-                alert('Броят въпроси е задължително поле');
-                return;
-            }
+                var numberOfQuestions = 0;
+                var questionNumber = document.getElementById('questionNumber');
+                var questionTime = document.getElementById('question-time');
+                $('#generate-btn').click(function() {
+                    var language = $('#language').val();
+                    var rank = $('#rank').val();
+                    var questions = $('#question').val();
+                    if(language == null){
+                        alert('Езика е задължително поле');
+                        return;
+                    }
+                    if(rank == null){
+                        alert('Нивото е задължително поле');
+                        return;
+                    }
+                    if(question == null){
+                        alert('Броят въпроси е задължително поле');
+                        return;
+                    }
 
-            $.get(`GenerateTest?Language=${language}&&Rank=${rank}&&Questions=${questions}`, function(data){
-                var questions = data.questions;
-                numberOfQuestions = data.questions.length;
-                for (var i = 0, len = questions.length; i < len; i += 1) {
-                    (function(i) {
-                      setInterval(function() {
-                      while(true){
-                          questions[i].timeToAnswer--;
-                          console.log(questions[i].timeToAnswer);
-                          if(questions[i].timeToAnswer == 0){
-                              break;
-                          }
-                      }
-                }, 1000)
-            })(i);
-}
-            });
-        });
+                    $.get(`GenerateTest?Language=${language}&&Rank=${rank}&&Questions=${questions}`, function(data){
+                        var questions = data.questions;
+                        questions.forEach((question, index) => {
+                           var questionNumber = index + 1;
+                           renderQuestion(question, questionNumber);
+                        })
+                    });
+                });
+                function renderQuestion(question, questionNumber) {
+                    while(true){
+                        if(question.timeToAnswer == 0){
+                            break;
+                        }
+                        else{
+                             setQuestionTimer(question, questionNumber);
+                        }
+                    }
+                    
+                }
+                function setQuestionTimer(question, questionNumber){
+                    var i = setInterval(setCurrentQuestionTimer(question, questionNumber), 1000);
+                }
+                function setCurrentQuestionTimer(question, questionNumber){
+                    question.timeToAnswer = question.timeToAnswer -1;
+                    setquestionData(question, questionNumber);
+                    if(question.timeToAnswer === 0) {
+                    clearInterval(setCurrentQuestionTimer);
+                    }
+                }
+                function setquestionData(question, questionNumber){
+                    $("#question-time").text(question.timeToAnswer);
+                    $('#questionNumber').text("Въпрос: " + questionNumber);
+                    $('#questionTitle').text(question.description);
+                    $('#firstQuestion').text("1." + question.answerOptions[0].description);
+                    $('#secondQuestion').text("2." + question.answerOptions[1].description);
+                    $('#thirdQuestion').text("3." + question.answerOptions[2].description);
+                    $('#fourthQuestion').text("4." + question.answerOptions[3].description);
+                }
 
 </script>
